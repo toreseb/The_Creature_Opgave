@@ -9,20 +9,27 @@ int [] YSpeed = new int [Monstre];
 void setup(){
   size(1920,1080);
   background(255);
-  for (int i=0;i<Monstre;i++){
-  X[i] = 1920/round(random(1,100));
-  Y[i] = 1080/round(random(1,100));
-  BallSize[i] = 10*round(random(1,5));
+  for (int f=0; f < Monstre; f++){
+    X[f] = 1*round(random(1,1920));
+    Y[f] = 1*round(random(1,1080));
+    BallSize[f]=round(random(50,100));
+    YSpeed[f] = round(random(-5,5));
+    XSpeed[f] = round(random(-5,5));
   }
 }
 
 void draw(){
-  for (int f = 0
-  Monster( X[],);
+  clear();
+  for (int f=0; f < Monstre; f++){
+  X[f] = X[f] + XSpeed[f];
+  Y[f] = Y[f] + YSpeed[f];
+  Monster(X[f],Y[f],BallSize[f]);
+}
 }
 
-void Monster(int X,int Y, int BallSize, int YSpeed, int XSpeed){
-  ellipse(X + XSpeed, Y+YSpeed, BallSize, BallSize);
-  ellipse(X, Y, BallSize/10 ,BallSize/10); 
-  ellipse(X, Y, BallSize/10 ,BallSize/10);
+
+void Monster(int X,int Y, int BallSize){
+  ellipse(X, Y, BallSize, BallSize);
+  ellipse(X+BallSize/5, Y-BallSize/10, BallSize/10 ,BallSize/10); 
+  ellipse(X-BallSize/5, Y-BallSize/10, BallSize/10 ,BallSize/10);
 }
