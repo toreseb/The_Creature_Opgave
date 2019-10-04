@@ -8,7 +8,7 @@ int [] YSpeed = new int [Monstre];
 
 void setup(){
   size(1920,1080);
-  background
+  background(255);
   for (int i=0;i<Monstre;i++){
   X[i] = 1920/round(random(1,100));
   Y[i] = 1080/round(random(1,100));
